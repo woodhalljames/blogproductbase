@@ -1,0 +1,37 @@
+from django.db import models
+from django.contrib.auth import get_user_model
+# Create your models here.
+
+
+User = get_user_model()
+
+class Author(models.Model):
+	user = models.OneToOneField(User, default='None', on_delete=models.CASCADE)
+	personal = models.TextField(max_length=100, default='None')
+	handle = models.CharField(max_length=100, default='None')
+	profile_picture = models.ImageField()
+
+
+class Category(models.Model): 
+	title = models.CharField(max_length=30)
+	meta = models.TextField(max_length = 160, default='None')
+
+	def __str__(self): 
+		return self.title 
+
+
+
+class Post(models.Model):
+	title = models.CharField(max_length = 100)
+	overview = models.TextField()
+	timestamp = models.DateTimeField(auto_now_add=True)
+	comment_count = models.IntegerField(default=0)
+	author = models.ForeignKey(Author, on_delete=models.CASCADE)
+	thumbnail = models.ImageField()
+	categories = models.ManyToManyField(Category)
+	meta = models.TextField(max_length = 160, default='None')
+	featured = models.BooleanField()
+
+
+	def __str__(self):
+		return self.title
