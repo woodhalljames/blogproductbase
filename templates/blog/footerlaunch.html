@@ -1,0 +1,72 @@
+<!-- ========================= FOOTER ========================= -->
+
+<br>
+<footer class="footer text-white bg-primary" style="background: #0e0e0e">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+          <h6 class="title">Categories #CrashingSoon</h6>
+					<ul class="list-unstyled">
+						<li> <a class="text-white" href="#">Women</a></li>
+						<li> <a class="text-white" href="#">Men</a></li>
+						<li> <a class="text-white" href="#">Accessories</a></li>
+						<li> <a class="text-white" href="#">Electronics</a></li>
+						<li> <a class="text-white" href="#">Pets</a></li>
+					</ul>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex"><hr class="d-block d-md-none">
+
+    <div class="col-mb-3">
+            <h4>Subscribe to Pastel Wave!</h4>
+            <p class="text-white">Subscribe to be here on launch day and stay update to date on our blog!</p>
+            <form>
+               <div style="text-align:center">
+              <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder="Your Email Please" required>
+            <br>
+            <input type="submit" value="Subscribe" style="background: #ffffff" class="btn btn-md">
+        </form>
+            </div>
+          </div>
+      </div>
+  </div><br>
+          <div class="col-md-5"><a class="d-block mb-2" href="post.html">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-1.jpg" alt="..." width="50">
+                <div class="ms-2 text-white">
+                  <p class="fw-bold mb-0">Hotels for all budgets</p><span>October 26, 2016</span>
+                </div>
+              </div></a><a class="d-block mb-2" href="post.html">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-2.jpg" alt="..." width="50">
+                <div class="ms-2 text-white">
+                  <p class="fw-bold mb-0">Great street atrs in London</p><span>October 26, 2016</span>
+                </div>
+              </div></a><a class="d-block mb-2" href="post.html">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-3.jpg" alt="..." width="50">
+                <div class="ms-2 text-white">
+                  <p class="fw-bold mb-0">Best coffee shops in Sydney</p><span>October 26, 2016</span>
+                </div>
+              </div></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+		<div class="copyrights bg-primary text-center">
+				<p class="">Privacy Policy - Terms of Use</p>
+				<p class=""> &copy 2023 Pastel Wave, All rights reserved </p> <hr>
+		</div>
+	<!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+</body>
+</html>
