@@ -10840,7 +10840,8 @@ strong {
 }
 
 footer.footer {
-  padding: 6.25rem 0;
+  padding: 3.25rem 0;
+
 }
 
 a {
@@ -11920,6 +11921,21 @@ a.link-underline:hover::after {
   transition: all 0.3s;
 }
 
+.form-control-amount {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.9rem + 2px);
+    padding: 0.45rem 0.85rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.37rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 .form-control::-moz-placeholder {
   color: #a2a7ad;
 }

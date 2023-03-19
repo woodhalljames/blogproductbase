@@ -1,1 +1,218 @@
-/* your styles go here */
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+html {
+  background-color: #f9f3fa;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  height: 60px;
+  display: flex;
+}
+.navbar__brand {
+  float: left;
+  display: inline;
+  width: 15%;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 60px;
+  color: #845ec2;
+  margin-left: 15px;
+}
+.navbar__menu {
+  display: flex;
+  width: 85%;
+  justify-content: flex-end;
+}
+.navbar__menu:hover .navbar__item {
+  color: #b39cd0;
+}
+.navbar__menu:hover .navbar__item.active::before {
+  left: 50%;
+  width: 0;
+}
+.navbar__menu:hover .navbar__item:hover, .navbar__menu:hover .navbar__item.active:hover {
+  color: #845ec2;
+}
+.navbar__menu:hover .navbar__item:hover::before, .navbar__menu:hover .navbar__item.active:hover::before {
+  width: 100%;
+  left: 0;
+}
+.navbar__item {
+  list-style-type: none;
+  float: right;
+  display: block;
+  color: #b39cd0;
+  padding: 14px 16px;
+  font-size: 1.1em;
+  line-height: 32px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navbar__item:not(:last-child) {
+  margin-right: 0.5em;
+}
+.navbar__item::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  height: 2px;
+  width: 0;
+  background-color: #845ec2;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0.6s;
+  left: 50%;
+}
+.navbar__item::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-left: 2px solid #845ec2;
+  border-right: 2px solid #845ec2;
+  transition: 0.2s;
+  transition-delay: 0.4s;
+}
+.navbar__item:hover, .navbar__item.active {
+  color: #845ec2;
+}
+.navbar__item:hover::before, .navbar__item.active::before {
+  transition-delay: 0s;
+  width: 100%;
+  left: 0;
+}
+.navbar__item:hover::after, .navbar__item.active::after {
+  transition-delay: 0.2s;
+  height: 80%;
+}
+.navbar__item__hovered {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+.navbar__item__hovered::before, .navbar__item__hovered::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #845ec2;
+  left: 0;
+  top: 10%;
+  width: 0;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+.navbar__item__hovered::after {
+  left: 100%;
+  right: 0;
+}
+.navbar__item__hovered:hover::before {
+  width: 50%;
+  transition-delay: 0.4s;
+}
+.navbar__item__hovered:hover::after {
+  left: 50%;
+  right: 0;
+  width: 50%;
+  transition-delay: 0.4s;
+}
+.navbar__item__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  overflow: hidden;
+}
+.navbar__item__content::before {
+  position: absolute;
+  content: attr(data-content);
+  background-color: #845ec2;
+  color: #e4f3fa;
+  top: -1em;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 1.1em;
+  padding-top: 0.5em;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0s;
+}
+.navbar__item:hover .navbar__item__content::before {
+  top: 0;
+  height: 100%;
+  transition-delay: 0.6s;
+}
+.navbar__item__icon {
+  display: none;
+  width: 60px;
+}
+@media screen and (max-width: 720px) {
+  .navbar__item {
+    display: none;
+    right: 0;
+  }
+  .navbar__item__icon {
+    display: block;
+  }
+  .navbar__item__icon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    left: 0;
+    bottom: 10%;
+    height: 0;
+    background-color: #845ec2;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0s;
+    border: none;
+  }
+  .navbar__item__icon:hover::after {
+    height: 100%;
+    transition-delay: 0.2s;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .responsive.navbar {
+    position: relative;
+    height: auto;
+    display: block;
+  }
+  .responsive .navbar__brand {
+    display: block;
+    width: 100%;
+  }
+  .responsive .navbar__menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  .responsive .navbar__item {
+    display: block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  .responsive .navbar__item__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
