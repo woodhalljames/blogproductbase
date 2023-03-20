@@ -20,12 +20,14 @@ from django.conf.urls.static import static
 from . import views
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('posts.urls')),
     path('', views.home, name='home'),
     path('tinymce/', include('tinymce.urls')),
+    path('contact-us/', views.contactus, name='contact-us'),
+    path('about-us/', views.aboutus, name='about-us'),
+    path('coming-soon/', views.soon, name='soon')
     
 ]
 

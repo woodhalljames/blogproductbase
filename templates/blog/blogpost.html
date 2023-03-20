@@ -10,11 +10,11 @@
             <div class="container"><img class="img-fluid w-100 mb-4" src="{{ post.thumbnail.url}}" alt="...">
               <ul class="list-inline mb-3">
                 {% for cat in post.categories.all %}
-                <li class="list-inline-item"><a class="text-uppercase" href="!#">{{cat}}</a></li>{% endfor %}
+                <li class="list-inline-item"><a class="text-uppercase" >{{cat}}</a></li>{% endfor %}
               </ul>
-              <h1 class="mb-4">{{ post.title }}<a href="!#"><i class="fa fa-bookmark-o"></i></a></h1>
+              <h1 class="mb-4">{{ post.title }}<!--a href="!#"--><i class="fa fa-bookmark-o"></i></a></h1>
               <ul class="list-inline list-separated text-gray-500 mb-5">
-                <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
+                <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" >
                     <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ post.author.profile_picture.url }}" alt="Pastel.Surf {{post.author.user.username}} Profile Picture"></div><small>{{ post.author.user.username }}</small></a></li>
                 <li class="list-inline-item small"><i class="far fa-clock"></i>{{post.timestamp}}</li>
                 <li class="list-inline-item small"><i class="far fa-eye"></i> {{post.view_count}}</li>
@@ -43,7 +43,7 @@
                   </div>
                   <div class="icon next"><i class="fas fa-angle-right">   </i></div></a></div>
                   {%endif%}
-              <div class="mb-5">
+              <!---div class="mb-5">
                 <header>
                   <h3 class="h6 mb-4">Post Comments<span class="fw-light text-gray-600 small ms-2">({{ post.comments.count }})</span></h3>
                 </header>
@@ -78,7 +78,7 @@
                 </form>
               </div>
               {% endif %}
-            </div>
+            </div-->
           </main>
           {% include 'blog/sidebar.html' with most_recent=most_recent category_count=category_count %}
         </div>

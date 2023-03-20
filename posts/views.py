@@ -65,19 +65,12 @@ def blog(request):
     return render(request,'blog/blogindex.html',context)
 
 
-def blogpost(request, id):
+def blogpost(request, slug):
     most_recent = Post.objects.order_by('-timestamp')[0:3]
     category_count = get_category_count()
-    post = get_object_or_404(Post, id=id)
-    form = CommentForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            form.instance.user = request.user
-            form.instance.post = post
-            form.save()
-            return redirect(reverse("blog-post", kwargs={
-                'id':post.id
-                }))
+    
+    post = get_object_or_404(Post, slug=slug)
+    
 
     context = {
         'post': post,
