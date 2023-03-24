@@ -11993,7 +11993,7 @@ a.link-underline:hover::after {
   margin: 0 0.2rem;
   height: 1px;
   background: #a2a7ad;
-  display: block;
+  display: block
 }
 
 .search-area {

@@ -267,3 +267,50 @@ a-fluid img.icon {
       line-height: 1.2;
       pointer-events: none;
    }
+
+
+...
+.site-footer .navbar-nav .nav-link {
+  color: var(--brightText);
+}
+
+.site-footer .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-footer .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.footer-text h4, .footer-text p, .footer-text a {
+  color: var(--brightText);
+}
+
+.footer-text a:hover {
+  color: #ffffff;
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar-expand-lg .navbar-collapse {
+    position: fixed;
+    top: 56px; /* Adjust this value according to your header height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff; /* Set your preferred background color */
+    overflow-y: auto;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: .5rem 1rem;
+  }
+  .navbar-expand-lg .navbar-nav .nav-item {
+    border-bottom: 1px solid #f2f2f2; /* Set your preferred border color */
+  }
+}

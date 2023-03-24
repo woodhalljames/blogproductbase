@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'marketing',
     'tinymce',
     'project',
+    
 
 ]
 
@@ -87,7 +89,7 @@ DATABASES = {
     }
 }
 
-
+CRISPY_TEMPLATE_PACK = 'uni-form'
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -163,3 +165,13 @@ VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static')
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 MEDIA_URL = '/media/'
+
+
+#email 
+DEFAULT_FROM_EMAIL = "donotreply@pastel.surf"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "smtp.sendgrid.net"  # new
+EMAIL_HOST_USER = "apikey"  # new
+EMAIL_HOST_PASSWORD = "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"  # new
+EMAIL_PORT = 587  # new
+EMAIL_USE_TLS = True  # new

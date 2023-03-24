@@ -47,8 +47,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog-post', kwargs = {"slug": self.slug})
 
-    def update_views(self, *args, **kwargs):
-         self.views = self.views + 1
+    def update_view_count(self, *args, **kwargs):
+         self.view_count = self.view_count + 1
          super(Post, self).save(*args, **kwargs)
 
    

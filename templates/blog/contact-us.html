@@ -4,44 +4,32 @@
 
 
 
+
 <div class="row" >
-<aside class="col-lg-6" style="display: block;
+<aside class="col-md-3" style="display: block;
     margin-left: auto;
     margin-right: auto">
 <div class="card">
       <div class="card-body">
-      <h4 class="card-title mb-4">Talk To Us!</h4>
-      <form>
-        <div class="form-row">
-			<div class="col form-group">
-				<label>Name</label>
-			  	<input type="text" class="form-control" placeholder="">
-			</div> <!-- form-group end.// -->
-			<div class="col form-group">
-				<label>Email</label>
-			  	<input type="email" class="form-control" placeholder="">
-			</div> <!-- form-group end.// -->
-		</div> <!-- form-row.// -->
-		<div class="form-group">
-			<label>What is message about?</label>
-			<select class="form-control">
-				<option>Interested in writing with us?</option>
-				<option>List your products on our store?</option>
-				<option>Recommendation</option>
-				<option>Other</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label>What is message about?</label>
-			<textarea class="form-control" rows="3"></textarea>
-		</div>
-		<br>
-		<button class="btn btn-primary btn-block">Send</button>
-      </form>
-      </div> <!-- card-body.// -->
+      	<div class="form-row">
+      <h4 class="card-title mb-4 text-center">Talk To Us!</h4>
+      <form method="POST" class="form-group">
+      	{% csrf_token %}
+
+      	{{form.as_p}}
+      	    <div class="form-actions">
+      	    	<button type ="submit" class="btn btn-primary btn-block btn-lg ">Send</button>
+    
     </div>
-  </aside>
+</form>
 </div>
+</div>
+</div>
+</aside>
+</div>
+        
+      	
+			
 
 
 

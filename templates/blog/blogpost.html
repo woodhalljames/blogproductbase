@@ -18,7 +18,7 @@
                     <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ post.author.profile_picture.url }}" alt="Pastel.Surf {{post.author.user.username}} Profile Picture"></div><small>{{ post.author.user.username }}</small></a></li>
                 <li class="list-inline-item small"><i class="far fa-clock"></i>{{post.timestamp}}</li>
                 <li class="list-inline-item small"><i class="far fa-eye"></i> {{post.view_count}}</li>
-                <li class="list-inline-item small"><i class="far fa-comment"></i> {{post.comment_count}}</li>
+                <!--li class="list-inline-item small"><i class="far fa-comment"></i> {{post.comment_count}}</li-->
               </ul>
               <div class="post-body">
                 {{ post.content | safe }}
@@ -26,7 +26,7 @@
               <ul class="list-inline mb-5">
                 
                {% for cat in post.categories.all %}
-                <li class="list-inline-item"><a class="tag" href="!#">#{{cat}}</a></li>{% endfor %}
+                <li class="list-inline-item"><a class="tag">#{{cat}}</a></li>{% endfor %}
               </ul>
               <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row mb-5">
                  {% if post.previous_post %}

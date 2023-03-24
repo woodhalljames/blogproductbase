@@ -19,22 +19,20 @@
 <ul class="list-unstyled">
                 <li class="mb-1"><a class="text-white" href="{% url 'home' %}">Home</a></li>
                 <li class="mb-1"><a class="text-white" href="{% url 'blog' %}">Blog</a></li>
-                <li class="mb-1"><a class="text-white" href="!#">About Us</a></li>
-                <li class="mb-1"><a class="text-white" href="!#">Contact</a></li>
+                <li class="mb-1"><a class="text-white" href="{% url 'about-us' %}">About Us</a></li>
+                <li class="mb-1"><a class="text-white" href="{% url 'contact' %}">Contact</a></li>
               </ul>
               
 </div>
-</div>
+</div>{% include 'blog/alerts.html' %}
             <div class="col-lg-4 col-md-4">
             <h4 class="mb-3">Subscribe to be here first!</h4>
             <p class="text-muted">Join us on this exciting journey as we launch our store and embark on a new adventure of pastel-fun.</p>
-            <form>
-               <div>
-        <form action="." method="post" class="form-horizontal" success>
+                   <form action="." method="POST" class="form-horizontal" success>
             {% csrf_token %}
             <input type="email" name="email" class="form-control" id="email" placeholder="Your Email Please" required>
             <br>
-            <input type="submit" value="Subscribe" class="submit btn btn-primary btn-md">
+            <button type="submit" value="Subscribe" class="submit btn btn-primary btn-md">Subscribe</button>
         </form>
     </div>
   
@@ -62,6 +60,9 @@
 
 	<!-- //container --->
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <!-- ========================= FOOTER END // ========================= -->
 </body>

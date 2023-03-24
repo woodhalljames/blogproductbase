@@ -29,6 +29,8 @@
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset">
                       <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ obj.author.profile_picture.url}}" alt="Author {{obj.author.user.username}} Profile Picture"></div><small>{{ obj.author.user.username }}</small></a>
                   <li class="list-inline-item small"><i class="far fa-clock"></i> {{ obj.timestamp|date:"F d Y"}}</li>
+                  
+                   <li class="list-inline-item small"><i class="far fa-eye"></i> {{obj.view_count}}</li>
                 
                 </ul>
               </div>
@@ -61,6 +63,7 @@
                     <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" >
                         <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ post.author.profile_picture.url }}" alt="..."></div><small>{{ post.author.user.username }}</small></a></li>
                     <li class="list-inline-item small"><i class="far fa-clock">{{post.timestamp | date:"F d Y"}}</i></li>
+                      <li class="list-inline-item small"><i class="far fa-eye"></i> {{post.view_count}}</li>
                     <!--li class="list-inline-item small"><i class="far fa-comment"></i> {{ post.comment_count }}</li-->
                   </ul>
                 </div>

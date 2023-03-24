@@ -25,9 +25,10 @@ urlpatterns = [
     path('blog/', include('posts.urls')),
     path('', views.home, name='home'),
     path('tinymce/', include('tinymce.urls')),
-    path('contact-us/', views.contactus, name='contact-us'),
+    path(r'subscribe/', views.subscribe, name='subscribe'),
     path('about-us/', views.aboutus, name='about-us'),
-    path('coming-soon/', views.soon, name='soon')
+    path('coming-soon/', views.soon, name='soon'),
+    path('', include('marketing.urls')),
     
 ]
 
