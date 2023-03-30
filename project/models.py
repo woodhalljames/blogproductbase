@@ -12,16 +12,9 @@ class Contact(models.Model):
         return self.email
 
 
-class SubscribeModel(models.Model):
-    sys_id = models.AutoField(primary_key=True, null=False, blank=True)
-    email = models.EmailField(null=False, blank=True, max_length=200, unique=True)
-    status = models.CharField(max_length=64, null=False, blank=True)
-    created_date = models.DateTimeField(null=False, blank=True)
-    updated_date = models.DateTimeField(null=False, blank=True)
+class Signup(models.Model):
+    email = models.EmailField(null=True)
+    date = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        app_label = "appname"
-        db_table = "appname_subscribe"
-
-    def __str__(self):
+    def __str__self(self):
         return self.email

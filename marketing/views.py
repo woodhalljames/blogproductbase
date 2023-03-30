@@ -11,14 +11,14 @@ def contactView(request):
         if form.is_valid():
             name = form.cleaned_data["name"]
             subject = form.cleaned_data["subject"]
-            from_email = form.cleaned_data["from_email"]
+            from_email = form.cleaned_data["email"]
             message = form.cleaned_data['message']
             try:
                 send_mail(subject, message, from_email, ["donotreply@pastel.surf"])
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
             return redirect("success")
-
+    
     return render(request, "blog/contact-us.html", {"form": form})
 
 

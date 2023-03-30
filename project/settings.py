@@ -168,10 +168,3 @@ MEDIA_URL = '/media/'
 
 
 #email 
-DEFAULT_FROM_EMAIL = "donotreply@pastel.surf"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_HOST = "smtp.sendgrid.net"  # new
-EMAIL_HOST_USER = "apikey"  # new
-EMAIL_HOST_PASSWORD = "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"  # new
-EMAIL_PORT = 587  # new
-EMAIL_USE_TLS = True  # new

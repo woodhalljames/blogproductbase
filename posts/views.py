@@ -22,7 +22,12 @@ def search(request):
     }
     return render(request, 'blog/search_results.html', context)
 
-
+def signup(request):
+    if request.method == "POST":
+        email = request.POST["email"]
+        new_signup = Signup()
+        new_signup.email = email 
+        new_signup.save()
 
 def get_category_count():
     queryset = Post.objects.values('categories__title').annotate(Count('categories__title')) #.annotate is a dictionry parameter
@@ -47,11 +52,7 @@ def blog(request):
     except EmptyPage:
             paginated_queryset = paginator.page(paginator.num_pages)
 
-    if request.method == "POST":
-        email = request.POST["email"]
-        new_signup = Signup()
-        new_signup.email = email 
-        new_signup.save()
+    
 
     context = {
         'object_list': featuredposts,
@@ -75,7 +76,7 @@ def blogpost(request, slug):
            post.save()
 
            # Or
-          
+         
 
     context = {
         'post': post,

@@ -4146,6 +4146,8 @@ fieldset:disabled .btn {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5); /* Sets the background color to white with 50% opacity */
+
 }
 
 .navbar > .container,
@@ -4179,6 +4181,7 @@ fieldset:disabled .btn {
 
 .navbar-nav .dropdown-menu {
   position: static;
+  overflow-y: auto;
 }
 
 .navbar-text {

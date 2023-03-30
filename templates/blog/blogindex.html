@@ -10,28 +10,30 @@
         <h2>Featured Article</h2><br>
         {% for obj in object_list %}
         
-         <div class="row d-flex align-items-stretch g-0">
+         <div class="row d-flex align-items-stretch g-0"  href="{{obj.get_absolute_url }}">
       
-        <div class="col-lg-5"><img class="img-fluid" src="{{ obj.thumbnail.url }}" alt="{{ obj.thumbnail_alt }}" href="pastel.surf/blog/post/Introducing-Pastel-surf"></div>
+        <a class="col-lg-5"><img class="img-fluid" src="{{ obj.thumbnail.url }}" alt="{{ obj.thumbnail_alt }}" href="{{obj.get_absolute_url }}"></a>
       
        
           <div class="col-lg-7">
             <div class="text-inner d-flex align-items-center h-100 bg-light">
               <div class="content px-4 px-lg-5">
-                <ul class="list-inline mb-1">
+                <ul class="list-inline mb-0">
                   {% for cat in obj.categories.all %}
                   <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" >{{cat}}</a></li>
                   {% endfor %}
                 </ul>
-                <h2 class="h4 mb-3"><a class="text-dark" method="GET" href=""pastel.surf/blog/post/Introducing-Pastel-surf"">{{ obj.title }}</a></h2>
+                <h2 class="h4 mb-3"><a class="text-dark" method="GET" href="{{obj.get_absolute_url }}">{{ obj.title }}</a></h2>
                 <p class="text-sm">{{ obj.meta }}</p>
-                <ul class="list-inline list-separated text-gray-500 mb-0">
+                <ul class="list-inline  text-gray-500 mb-0">
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ obj.author.profile_picture.url}}" alt="Author {{obj.author.user.username}} Profile Picture"></div><small>{{ obj.author.user.username }}</small></a>
-                  <li class="list-inline-item small"><i class="far fa-clock"></i> {{ obj.timestamp|date:"F d Y"}}</li>
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ obj.author.profile_picture.url}}" alt="Author {{obj.author.user.username}} Profile Picture"></div><small>{{ obj.author.user.username }}</small></a></li> </ul>
+                      <ul class="list-inline list seperated text-gray-500 mb-0">
+                  <li class="list-inline-item small"><i class="far fa-clock"></i> {{ obj.timestamp|date:"F d Y"}}          |</li>
                   
                    <li class="list-inline-item small"><i class="far fa-eye"></i> {{obj.view_count}}</li>
-                
+              
+
                 </ul>
               </div>
             </div>
@@ -50,6 +52,7 @@
             <div class="container"> 
 
               <div class="row gy-4 mb-5">
+
                 <!-- post -->
                  {% for post in queryset %}
                 <div class="col-lg-6">
@@ -59,12 +62,12 @@
                     {% endfor %}
                   <h3 class="h4"><a class="text-dark small" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
                   <p class="text-muted text-sm">{{ post.meta }}</p>
-                  <ul class="list-inline list-separated text-gray-500 mb-0">
+                  <!--ul class="list-inline list-separated text-gray-500 mb-0">
                     <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" >
                         <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ post.author.profile_picture.url }}" alt="..."></div><small>{{ post.author.user.username }}</small></a></li>
-                    <li class="list-inline-item small"><i class="far fa-clock">{{post.timestamp | date:"F d Y"}}</i></li>
+                    <li class="list-inline-item small"><i class="far fa-clock"> {{post.timestamp | date:"F d Y"}}</i></li>
                       <li class="list-inline-item small"><i class="far fa-eye"></i> {{post.view_count}}</li>
-                    <!--li class="list-inline-item small"><i class="far fa-comment"></i> {{ post.comment_count }}</li-->
+                    <li class="list-inline-item small"><i class="far fa-comment"></i> {{ post.comment_count }}</li-->
                   </ul>
                 </div>
               {%endfor%}
@@ -96,7 +99,7 @@
               {% csrf_token %}
               <div class="form-group">
                 <input class="form-control p-3" type="email" name="email" id="email" placeholder="Type your email address">
-                <button class="submit" type="submit">Subscribe</button>
+                <button  type="submit" class="submit btn btn-primary btn-md">Subscribe</button>
               </div>
             </form>
           </div>

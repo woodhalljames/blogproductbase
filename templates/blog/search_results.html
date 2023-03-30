@@ -2,7 +2,22 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container"><br>
+    <aside class="col-md-4">
+            <!-- Widget [Search Bar Widget]-->
+            <div class="card mb-5">
+              <div class="card-body">
+                <h3 class="h6">Search the blog</h3>
+                <form action="{% url 'search' %}">
+                  <div class="input-group border-bottom">
+                    <input class="form-control border-0 shadow-0 ps-0" name="q" type="text" placeholder="What are you looking for?">
+                    <button class="btn btn-link btn-sm shadow-0 px-0" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </aside>
 <h2> Search Results: </h2>
 <div class="col-md-4">
     {% for post in queryset %}<a class="d-block mb-2" href="{{ post.get_absolute_url }}">
@@ -13,7 +28,9 @@
               </div></a>
           
     <br/><hr>
+
 {% endfor %}
+
 </div>
 </div>
 {% endblock %}
