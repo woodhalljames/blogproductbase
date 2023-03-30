@@ -24,7 +24,7 @@
                 {{ post.content | safe }}
               </div>
               <ul class="list-inline mb-5">
-                
+               <br> 
                {% for cat in post.categories.all %}
                 <li class="list-inline-item"><a class="tag">#{{cat}}</a></li>{% endfor %}
               </ul>

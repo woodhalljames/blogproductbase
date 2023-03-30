@@ -67,7 +67,7 @@ def blog(request):
 
 
 def blogpost(request, slug):
-    most_recent = Post.objects.order_by('-timestamp')[0:3]
+    most_recent = Post.objects.order_by('-timestamp')[0:4]
     category_count = get_category_count()
     post = get_object_or_404(Post, slug=slug)
     
