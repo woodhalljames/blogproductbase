@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['pastelsurfblog.eba-3femg9ka.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['pastel.surf']
 
 
 # Application definition
