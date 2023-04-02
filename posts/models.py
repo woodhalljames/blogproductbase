@@ -27,7 +27,7 @@ class Category(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
-    comment_count = models.IntegerField(default=0)
+    
     view_count = models.IntegerField(default = 0)
     title = models.CharField(max_length = 100)
     slug = models.SlugField(default='None', unique=True)
@@ -54,11 +54,3 @@ class Post(models.Model):
    
 
 
-class Comment(models.Model): 
-	name = models.CharField(max_length=250)
-	timestamp = models.DateTimeField(auto_now_add=True)
-	content = models.TextField()
-	post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-
-	def __str__(self):
-		return self.user.username

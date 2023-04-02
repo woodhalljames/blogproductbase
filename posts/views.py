@@ -4,7 +4,7 @@ from marketing.models import Signup
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . import views
 from django.db.models import Count, Q
-from .forms import CommentForm
+
 
 
 
